@@ -1,0 +1,120 @@
+:root {
+    --blue: #080c9c;
+    --black: #000000;
+    --white: #ffffff;
+}
+
+/* Hack de conversión */
+html {
+    /* Establecer un tamaño específico a la pantalla */
+    font-size: 62.5%;
+    /* Especificar que el elemento incluirá automáticamente el espacio ocupado por el relleno y el borde. Que una caja considere el ancho, el padding y el border. Si se utilizase el modelo de caja por defecto (content-box): clientWidth = width + padding + border no se sabría sino calculando el tamaño exacto de la caja, por ello mejor serí reemplazarlo por border-box: clientWidth = width - padding - border */
+    box-sizing: border-box;
+}
+
+body {
+    /* Agregarle tamaño al contenido de la pantalla, así se equipara el cambio */
+    font-size: 16px;
+}
+
+/* Esto lo que hace es hacer que en tu html se use border-box y los elementos hereden este valor pero puedan cambiar si fuese necesario por otro valor (aunque es poco probable que lo uses quién sabe si cargas algún componente de tercero que sí). */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Cabecera principal */
+.principal-title {
+    background-color: var(--blue);
+    padding: 2rem;
+    margin-top: 0;
+    color: var(--white);
+    margin-bottom: 0;
+}
+
+/* Navigation */
+.nav-bar {
+    background-color: var(--black);
+}
+
+.navigation-main {
+    /* Permite crear diseños de cajas flexibles y responsivos con facilidad. */
+    display: flex;
+    /* Que los elementos se pongan en una columna*/
+    flex-direction: column;
+}
+
+/* Definiendo que la página de ser responsive, se puede ver primero mobile, mobile first o desktop first */
+/* Media query cuando tenga de 768 a más, cuando se cumpla se activará el contenido */
+@media (min-width: 768px) {
+    .navigation-main {
+        /* Que todos los elementos del navigation-main se pongan en una sola fila */
+        flex-direction: row;
+        /* Justificación del contenido (Inicio, Nosotros, Clientes, Contacto). */
+        /* Los elementos se van al borde del contenedor */
+        justify-content: left;
+    }
+
+    .button {
+        /* Ancho automático, cuando sea menor se reemplazará con 90% */
+        width: auto;
+    }
+}
+
+.container {
+    /* Se especifica que el contenedor tenga como máximo 1200 px */
+    max-width: 120rem;
+}
+
+.navigation-main a {
+    /* Display: block;
+        se utiliza para dar a un elemento HTML el comportamiento típico de un "bloque" en el flujo de contenido,
+        permitiendo su personalización en términos de ancho,
+        alto,
+        márgenes,
+        relleno y otros aspectos de diseño.
+        Que tome el espacio a pesar de que el tamaño de la pantalla varíe. */
+    display: block;
+    /* Se centra */
+    text-align: center;
+    /* Se espicifíca el color de cada hijo */
+    color: var(--white);
+    /* Se le quita la decoración el underline */
+    text-decoration: none;
+    /* Espaciado de adentro así afuera */
+    padding: 1rem 2rem;
+    /* Espaciado entre cada a del navigation main */
+    white-space: 1rem;
+}
+
+/* Pseduo clase hover que se activa cada vez que el mouse pasa por encima del elemento */
+.navigation-main a:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.container-contacto {
+    padding: 0 2rem;
+    margin: 0;
+}
+
+.container-contacto h2 {
+    margin: 3rem 0;
+    font-weight: bold;
+}
+
+.container-contacto p {
+    margin-bottom: 4rem;
+}
+
+.footer {
+    background-color: var(--black);
+}
+
+.derechos {
+    text-align: center;
+    color: var(--white);
+    padding: 1rem 0;
+    margin-bottom: 0;
+}

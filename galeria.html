@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación continua 1</title>
+    <!-- Link para colocar un ícono en el título de la página -->
+    <link rel="icon" href="img/image2-galery.png" type="img/x-icon">
+
+    <!-- Realizando la precarga, cuando se carga una página se cargan tres cosas: El HTML, el CSS y el JavaScript, cuando haces un reload haces que cierto css se cargue a la misma vez que el HTML -->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="preload" href="css/style-galeria.css" as="style">
+    <!-- Linkeando el HTML con el normalize, estandarizando sin depender del navegador -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Linkeando el HTML con el CSS -->
+    <link rel="stylesheet" href="css/style-galeria.css">
+</head>
+
+<body>
+    <h1 class="principal-title">HTML 5 y CSS</h1>
+
+    <div class="nav-bar">
+        <nav class="navigation-main container">
+            <a href="index.html">Inicio</a>
+            <a href="galeria.html">Mi Galería</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+        <div></div>
+    </div>
+
+    <div class="container-images">
+        <img class="image1" src="img/image2-index.png" alt="imagen-perro1">
+        <img class="image2" src="img/image2-galery.png" alt="imagen-perro2">
+        <img class="image3" src="img/image3-galery.png" alt="imagen-perro3">
+        <img class="image4" src="img/image4-galery.png" alt="imagen-perro4">
+        <br>
+        <img class="image5" src="img/image5-galery.png" alt="imagen-perro5">
+    </div>
+
+    <footer class="footer">
+        <p class="derechos">Todos los derechos reservados a Jairo Meléndez ®</p>
+    </footer>
+
+</body>
+
+</html>
